@@ -1,20 +1,38 @@
+# 99.9 --> float
+# "False" --> str
+# False --> bool
+# '0' --> str
+# 0 --> itr
+# True --> bool
+# 'True' --> str
+# [{}] --> list
+# {'a': []} --> dict
+
+# What data type would best represent:
+
+# A term or phrase typed into a search box? str
+# If a user is logged in? bool
+# A discount amount to apply to a user's shopping cart? float
+# Whether or not a coupon code is valid? bool
+# An email address typed into a registration form? str
+# The price of a product? float
+# A Matrix? list
+# The email addresses collected from a registration form? str
+# Information about applicants to Codeup's data science program? dict
+
 # Question 1
 # You have rented some movies for your kids: The little mermaid (for 3 days), Brother Bear (for 5 days, they love it), and Hercules (1 day, you don't know yet if they're going to like it). If price for a movie per day is 3 dollars, how much will you have to pay?
-
 total_rental_price = (3 + 5 + 1) * 3
 print(total_rental_price)
 
-
 # Question 2
 # Suppose you're working as a contractor for 3 companies: Google, Amazon and Facebook, they pay you a different rate per hour. Google pays 400 dollars per hour, Amazon 380, and Facebook 350. How much will you receive in payment for this week? You worked 10 hours for Facebook, 6 hours for Google and 4 hours for Amazon.
-
 gross_pay = (400 * 6) + (380 * 4) + (350 * 10)
 print(gross_pay)
 
 # Question 3
 # # A student can be enrolled to a class only if the class is not full and the class schedule does not conflict with her current schedule.
 # I wildly overshot what the assignment was asking for. Need to do better planning next time. 
-
 import datetime as dt
 
 ethics_101 = {'e_cap': 25, 'e_cur': 22, 'weekday': 'Thu', 'start_time': dt.timedelta(hours=13, minutes=00), 'end_time': dt.timedelta(hours=14, minutes=30)}
@@ -41,7 +59,6 @@ print (conflict_check(student_schedule, ethics_101))
 
 # Question 4
 # A product offer can be applied only if people buys more than 2 items, and the offer has not expired. Premium members do not need to buy a specific amount of products.
-
 customer_1 = {'purchase_count': 1, 'premium': True}
 promotion_1 = {'discount': .85, 'exp_date': dt.date(2021, 12, 31)}
 
@@ -54,8 +71,8 @@ def apply_offer(customer, offer):
 
 # Question 5
 # Continue working in your data_types_and_variables.py file. Use the following code to follow the instructions below:
-
 username = 'codeup'
 password = 'notastrongpassword'
 credential_verification = {'p_length > 5': len(password) > 5, 'u_length < 20': len(username) < 20, 'p != u': password != username}
+
 
