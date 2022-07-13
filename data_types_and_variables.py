@@ -13,30 +13,37 @@ print(gross_pay)
 
 # Question 3
 # # A student can be enrolled to a class only if the class is not full and the class schedule does not conflict with her current schedule.
+# I wildly overshot what the assignment was asking for. Need to do better planning next time. 
 
-import datetime
-ethics_101 = {'e_cap': 25, 'e_cur': 25, 'weekday': 'Thu', 'start_time': datetime.timedelta(), 'duration': 90}
-psyc_101 = {}
-math_1 = {} 
-eng_1b = {} 
-math_13 = {}
+import datetime as dt
+
+ethics_101 = {'e_cap': 25, 'e_cur': 22, 'weekday': 'Thu', 'start_time': dt.timedelta(hours=13, minutes=00), 'end_time': dt.timedelta(hours=14, minutes=30)}
+psyc_101 = {'e_cap': 25, 'e_cur': 24, 'weekday': 'Wed', 'start_time': dt.timedelta(hours=13, minutes=00), 'end_time': dt.timedelta(hours=14, minutes=30)}
+math_1 = {'e_cap': 25, 'e_cur': 23, 'weekday': 'Mon', 'start_time': dt.timedelta(hours=13, minutes=00), 'end_time': dt.timedelta(hours=14, minutes=30)} 
+eng_1b = {'e_cap': 25, 'e_cur': 15, 'weekday': 'Sat', 'start_time': dt.timedelta(hours=13, minutes=00), 'end_time': dt.timedelta(hours=14, minutes=30)} 
+math_13 = {'weekday': 'Thu', 'start_time': dt.timedelta(hours=12, minutes=00), 'end_time': dt.timedelta(hours=13, minutes=30)}
+
 student_schedule = (psyc_101, math_1, eng_1b, math_13)
 
 def conflict_check(schedule, section):
     if section['e_cap'] == section['e_cur']:
-        return 'Class Full'
+        return 'Section full.'
 
     for item in schedule:
-        if ethics_101['weekday'] == item['weekday']:
-            if 
-
+        if section['weekday'] == item['weekday']:
+            if section['start_time'] < item['end_time'] < section['end_time']\
+                or section['start_time'] < item['start_time'] < section['end_time']:
+                return 'Section conflicts with current schedule.'
+                
     return 'Student may join.'
+
+print (conflict_check(student_schedule, ethics_101))
 
 # Question 4
 # A product offer can be applied only if people buys more than 2 items, and the offer has not expired. Premium members do not need to buy a specific amount of products.
 
 customer_1 = {'purchase_count': 1, 'premium': True}
-promotion_1 = {'discount': .85, 'exp_date': datetime.date(2021, 12, 31)}
+promotion_1 = {'discount': .85, 'exp_date': dt.date(2021, 12, 31)}
 
 def apply_offer(customer, offer):
     if offer['exp_date'] < date.today():
@@ -50,5 +57,5 @@ def apply_offer(customer, offer):
 
 username = 'codeup'
 password = 'notastrongpassword'
-credential_verification = {'p_length > 5': len(password) > 5, 'u_length < 20': len(username) < 20, 'p != u': password == username}
+credential_verification = {'p_length > 5': len(password) > 5, 'u_length < 20': len(username) < 20, 'p != u': password != username}
 
