@@ -2,20 +2,20 @@
 # prompt the user for a day of the week, print out whether the day is Monday or not
 def is_monday():
     today = input('What is today? ')
-    if today == 'Monday' :
-        return print( f'It certainly is {today}!') 
+    if today.lower() == 'monday' :
+        return print( f'It certainly is {today.capitalize}!') 
     return input('Try Again (ex: Tuesday):' )
-is_monday()
+#is_monday()
 
 # prompt the user for a day of the week, print out whether the day is a weekday or a weekend
 def is_weekend():
     day = input('What is today? ')
-    if day in ('Saturday', 'Sunday'):
+    if day.capitalize in ('Saturday', 'Sunday'):
         return 'It\'s the Weekend!'
-    elif day in ('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'):
+    elif day.capitalize in ('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'):
         return 'Still a Weekday' 
     return input('Say Again? (Ex: Wednesday) ')
-is_weekend()
+#is_weekend()
 
 # create variables and make up values for
 # the number of hours worked in one week
@@ -48,10 +48,11 @@ while (i < 100):
     print(f'{i}\n')
 
 # Alter your loop to count backwards by 5's from 100 to -10.
-i = 105
+i = 100
 while (i > -10):
-    i -=5
     print(f'{i}\n')
+    i -=5
+
 
 # Create a while loop that starts at 2, and displays the number squared on each line while the number is less than 1,000,000. Output should equal:
 i = 2
@@ -62,10 +63,10 @@ while (i < 1000000):
         print(f'{i}\n')
 
 # Write a loop that uses print to create the output shown below.
-i = 105
+i = 100
 while (i > 5):
-    i -= 5
     print(f'{i}')
+    i -= 5
 
 # For Loops
 # Write some code that prompts the user for a number, then shows a multiplication table up through 10 for that number.
@@ -99,13 +100,14 @@ for i in range(1, 50, 2):
     print(f'Here is an odd number: {i}')
               
 # The input function can be used to prompt for input and use that input in your python code. Prompt the user to enter a positive number and write a loop that counts from 0 to that number. (Hints: first make sure that the value the user entered is a valid number, also note that the input function returns a string, so you'll need to convert this to a numeric type.)
-user_input = -1
+user_input = ''
 
-while (user_input):
-    user_input = input('Pick a positive integer: ')
-    if int(user_input) > 0:
-        user_input = int(user_input)
-        break
+while (user_input.isdigit() == False):
+    user_input = input('Enter a positive integer: ')
+    if user_input.isdigit():
+        if int(user_input) > 0:
+            user_input = int(user_input)
+            break
 
 for i in range(0, user_input + 1):
     print(i)

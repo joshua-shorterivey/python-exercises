@@ -63,7 +63,7 @@ customer_1 = {'purchase_count': 1, 'premium': True}
 promotion_1 = {'discount': .85, 'exp_date': dt.date(2021, 12, 31)}
 
 def apply_offer(customer, offer):
-    if offer['exp_date'] < date.today():
+    if offer['exp_date'] < dt.date.today():
         return False
     if customer['purchase_count'] > 2 or customer['premium'] == True:
         return True
