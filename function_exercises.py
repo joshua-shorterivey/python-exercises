@@ -1,27 +1,24 @@
-# # Exercises
-
+## Exercises
 # ### Create a file named function_exercises.py for this exercise. After creating each function specified below, write the necessary code in order to test your function.
 
 # #### Define a function named is_two. It should accept one input and return True if the passed input is either the number or the string 2, False otherwise.
+#
 #function defines single parameter, input, and will return boolean value
 def is_two(input):
     #takes in input and returns a boolean based on if the input matches the stated values
     return input == 2 or input == '2'
-
 print(is_two('b'))
 print(is_two('two'))
 print(is_two(2))
 print(is_two('2'))
 
-
 # #### Define a function named is_vowel. It should return True if the passed string is a vowel, False otherwise.
-
+#function defines single parameter, str_to_check. returns boolean
 def is_vowel (str_to_check):
-    return str_to_check.lower() in ('aeiou')
-
+    #returns result of check for membership in list of *vowels*
+    return str_to_check.lower() in list('aeiou')
 print(is_vowel('b'))
 print(is_vowel('e'))
-
 
 # #### Define a function named is_consonant. It should return True if the passed string is a consonant, False otherwise. Use your is_vowel function to accomplish this.
 # 
@@ -29,10 +26,8 @@ print(is_vowel('e'))
 def is_consonant(str_to_check):
     #returns the result of checking the argument passed into is_vowel() function for True/False status
     return is_vowel(str_to_check) == False
-
 print(is_consonant('b'))
 print(is_consonant('e'))
-
 
 # #### Define a function that accepts a string that is a word. The function should capitalize the first letter of the word if the word starts with a consonant.
 # 
@@ -44,7 +39,6 @@ def capitalize_cons(word):
         return word.capitalize()
     # default function behaviour
     return word
-
 print(capitalize_cons('accepts'))
 print(capitalize_cons('string'))
 
@@ -55,25 +49,16 @@ print(capitalize_cons('string'))
 def calculate_tip(tip_percent, bill_total):
     # returns product of multiplying both parameters together
     return tip_percent * bill_total
-
 print(calculate_tip(.15, 75))
-    
-
 
 # #### Define a function named apply_discount. It should accept a original price, and a discount percentage, and return the price after the discount is applied.
 # 
-
-# In[10]:
-
-
 # function defines two parameters, original_price and discount. returns new value after arithmetic manipulation 
 def apply_discount(original_price, discount):
     # takes original price and multiplies it by the discount subtracted from 1
     # assumes discount is entered as a decimal value between 0 and 1
     return original_price * (1 - discount)
-
 print(apply_discount(150, .25))
-
 
 # #### Define a function named handle_commas. It should accept a string that is a number that contains commas in it as input, and return a number as output.
 # function defines single parameter, str_num. returns integer value 
@@ -82,15 +67,12 @@ def handle_commas(str_num):
     str_num = str_num.replace(',' , '')
     # returns str_num cast as an int
     return int(str_num)
-
 print(handle_commas('1,000'))
-
 
 # #### Define a function named get_letter_grade. It should accept a number and return the letter grade associated with that number (A-F).
 # function defines single parameter, numerical_grade, that is a number. will return string value 
 def get_letter_grade(numerical_grade):
-    
-    # check for parameter membership in given range
+        # check for parameter membership in given range
     if numerical_grade in range(88, 101):
         # if in range declare and assign variable letter 
         letter = 'A'
@@ -112,7 +94,6 @@ def get_letter_grade(numerical_grade):
         letter = 'F'
     # returns variable letter  
     return letter
-
 print(get_letter_grade(96))
 print(get_letter_grade(60))
 
@@ -128,20 +109,19 @@ def remove_vowels(str_to_strip):
             str_copy += char
     # returns variable initialized at start of function
     return str_copy
-
 print(remove_vowels('pineapple'))
 
 # #### Define a function named normalize_name. It should accept a string and return a valid python identifier, that is:
-# ##### anything that is not a valid python identifier should be removed
-# ##### leading and trailing whitespace should be removed
-# ##### everything should be lowercase
-# ##### spaces should be replaced with underscores
-# ##### for example:
-# ###### Name will become name
-# ##### First Name will become first_name
-# ###### % Completed will become completed
+# anything that is not a valid python identifier should be removed
+# leading and trailing whitespace should be removed
+# everything should be lowercase
+# spaces should be replaced with underscores
+# for example:
+# Name will become name
+# First Name will become first_name
+# % Completed will become completed
 
-# function defines parameter, string, that is a string. returns a string valu
+# function defines parameter, string, that is a string. returns a string value
 def normalize_name(string):
     # initializes empty string
     normalized = ''
@@ -155,10 +135,8 @@ def normalize_name(string):
             normalized += char
     # returns string variable previously initialized
     return normalized
-
 print(normalize_name('        %First Name '))
 print(normalize_name('   Joshua Shorter-Ivey'))
-
 
 # #### Write a function named cumulative_sum that accepts a list of numbers and returns a list that is the cumulative sum of the numbers in the list.
 # #### cumulative_sum([1, 1, 1]) returns [1, 2, 3]
@@ -231,4 +209,3 @@ def col_index(col_name):
         if name == col_name:
             return idx
     return 'No Match'
-
