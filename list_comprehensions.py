@@ -55,19 +55,44 @@ fruit_character_length = [len(fruit) for fruit in fruits]
 fruits_with_letter_a = [fruit for fruit in fruits if 'a' in fruit]
 
 # Exercise 10 - Make a variable named even_numbers that holds only the even numbers 
+even_numbers = [num for num in numbers if abs(num % 2 == 0)]
 
 # Exercise 11 - Make a variable named odd_numbers that holds only the odd numbers
+odd_numbers = [num for num in numbers if abs(num % 2 != 0)]
 
 # Exercise 12 - Make a variable named positive_numbers that holds only the positive numbers
+odd_nubers = [num for num in numbers if num > 0]
+odd_numbers
 
 # Exercise 13 - Make a variable named negative_numbers that holds only the negative numbers
+negative_numbers = [num for num in numbers if num < 0]
+negative_numbers
 
 # Exercise 14 - use a list comprehension w/ a conditional in order to produce a list of numbers with 2 or more numerals
+two_or_more_numerals = [num for num in numbers if len(str(abs(num))) >= 2]
+two_or_more_numerals
 
 # Exercise 15 - Make a variable named numbers_squared that contains the numbers list with each element squared. Output is [4, 9, 16, etc...]
+numbers_squared = [num ** 2 for num in numbers]
+numbers_squared
 
 # Exercise 16 - Make a variable named odd_negative_numbers that contains only the numbers that are both odd and negative.
+odd_negative_numbers = [num for num in numbers if num < 0 and num % 2 != 0]
+odd_negative_numbers
 
 # Exercise 17 - Make a variable named numbers_plus_5. In it, return a list containing each number plus five. 
+numbers_plus_5 = [num + 5 for num in numbers]
+numbers_plus_5
 
-# BONUS Make a variable named "primes" that is a list containing the prime numbers in the numbers list. *Hint* you may want to make or find a helper function that determines if a given number is prime or not.
+# BONUS Make a variable named "primes" that is a list containing the prime numbers in the numbers list. 
+#*Hint* you may want to make or find a helper function that determines if a given number is prime or not.
+def is_prime(num):
+    if num == 2:
+        return True
+    for i in range(2, int(abs(num) ** 0.5)+1):
+        if abs(num) % i == 0 or abs(num) % 2 == 0:
+            return False
+    return True
+
+primes = [num for num in numbers if is_prime(num)]
+primes
