@@ -1,5 +1,10 @@
 from function_exercises import calculate_tip
-import itertools
+from function_exercises import get_letter_grade as glg
+glg(79)
+
+# Read about and use the itertools module from the python standard library to help you solve the following problems:
+
+import itertools as iter
 print(itertools.combinations('abcd', 2))
 
 # How many different ways can you combine the letters from "abc" with the numbers 1, 2, and 3? 9

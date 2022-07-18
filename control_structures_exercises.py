@@ -1,10 +1,26 @@
 # Conditional Basics
 # prompt the user for a day of the week, print out whether the day is Monday or not
 def is_monday():
+    """
+    Result of user input compared to string 'monday'
+    
+    Parameters
+    ----------
+    None
+  
+    Returns
+    -------
+    bool
+        The result of comparing user input to monday
+    
+    """
+    
+    # assign user input to variable for later comparison
     today = input('What is today? ')
     if today.lower() == 'monday' :
         return print( f'It certainly is {today.capitalize}!') 
     return input('Try Again (ex: Tuesday):' )
+
 #is_monday()
 
 # prompt the user for a day of the week, print out whether the day is a weekday or a weekend
