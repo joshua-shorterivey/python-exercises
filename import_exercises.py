@@ -20,7 +20,6 @@ len(combine_letters)
 
 #How many different combinations are there of 2 letters from "abcd"? 6
 different = len(list(iter.combinations('abcd', 2)))
-different
 
 # How many different permutations are there of 2 letters from "abcd"? 12
 diff_perm = list(iter.permutations('abcd', 2))
